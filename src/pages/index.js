@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, {useEffect, useState} from "react"
 import { Link } from "gatsby"
 
 import API from '../utils/API/api'
@@ -10,14 +10,18 @@ import SEO from "../components/seo"
 
 const IndexPage = () => {
 
+    const [search, setSearch] = useState(null)
+
 	useEffect(() => {
         console.log('ping')
-		API.google_search()
+		API.google_search('food', '')
         .then(data => {
             console.log(data)
+            setSearch(data.data)
         })
 	},[])
 	
+
 	return(
 		<Layout>
 			<SEO title="Home" />
@@ -29,8 +33,19 @@ const IndexPage = () => {
 			</div>
 			<Link to="/page-2/">Go to page 2</Link> <br />
 			<Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+            {search ?
+                <ul>
+                {search.items.map(result => {
+                    return(
+                        <li>
+                            <img src = {result.link} alt = {result.title}></img>
+                            <p>{result.title}</p>
+                        </li>
+                    )
+                })}
+                </ul> 
+            : null}
 		</Layout>
-
 	)
 }
 
