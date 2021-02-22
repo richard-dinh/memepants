@@ -14,7 +14,7 @@ const IndexPage = () => {
 
 	useEffect(() => {
         console.log('ping')
-		API.google_search('food', '')
+		API.google_search('money', 'gif')
         .then(data => {
             console.log(data)
             setSearch(data.data)

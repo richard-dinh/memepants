@@ -4,7 +4,8 @@ const {google} = require('googleapis')
 
 
 router.get("/google/:q?/:fileType?", (request, response) => {
-  // get params. Set defaults if nothing passed in
+  // get query params. Set defaults if nothing passed in
+  //q and filetype are optional
   console.log(request.query)
   let q = request.query.q
     ? request.query.q + " spongebob meme"
