@@ -1,0 +1,45 @@
+/* header */
+
+.header_container{
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 93%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 93%);
+}
+
+.header_title:before{
+    content: '';
+    background-image: url('../../../static/pineapple.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: .59;
+    z-index: -1;
+    padding: 0;
+    margin:0;
+}
+
+.header_title{
+    font-size: 2rem;
+}
+.header_title h1{
+    padding: 3px;
+    margin: 0;
+}
+.spongebob_title{
+    color: #E7DF31;
+}
+.memepants_title{
+    color: #9C6531;
+}
+
+.app_description{
+    font-size: 1.25rem;
+    color: #827B7B;
+}
+
