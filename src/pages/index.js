@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import API from '../utils/API/api'
 // Components
 import Header from '../components/Header/Header'
-
+import Filter from '../components/Filter/Filter'
 // css
 import './index.css'
 
@@ -23,7 +23,10 @@ const IndexPage = () => {
 	
 
 	return(
-        <Header/>
+        <>
+        <Header />
+        <Filter />
+        </>
 	)
 }
 
