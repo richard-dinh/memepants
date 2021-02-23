@@ -5,6 +5,7 @@ import API from '../utils/API/api'
 // Components
 import Header from '../components/Header/Header'
 import Filter from '../components/Filter/Filter'
+import Search from '../components/Search/Search'
 // css
 import './index.css'
 
@@ -26,6 +27,7 @@ const IndexPage = () => {
         <>
         <Header />
         <Filter />
+        <Search />
         </>
 	)
 }

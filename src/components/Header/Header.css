@@ -4,9 +4,9 @@
     text-align: center;
     position: relative;
     width: 100%;
-    height: 300px;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 93%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 93%);
+    height: 320px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
 }
 
 .header_title:before{
@@ -38,6 +38,9 @@
     color: #9C6531;
 }
 
+.header_description{
+    padding-top: 1em;
+}
 .app_description{
     font-size: 1.25rem;
     color: #827B7B;
