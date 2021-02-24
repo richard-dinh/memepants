@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from "react"
-import { Link } from "gatsby"
+import React, {useEffect, useState, createContext} from "react"
 
 import API from '../utils/API/api'
 // Components
@@ -9,27 +8,40 @@ import Search from '../components/Search/Search'
 // css
 import './index.css'
 
+// Context
+import SearchContext from '../utils/context/SearchContext'
+
 const IndexPage = () => {
 
-    const [search, setSearch] = useState(null)
+    const [searchState, setSearchState] = useState({
+        search: ''
+    })
 
-	useEffect(() => {
-        console.log('ping')
-		API.google_search('money', 'gif')
-        .then(data => {
-            console.log(data)
-            setSearch(data.data)
-        })
-	},[])
+    searchState.updateSearch = value => {
+        console.log("in update Search")
+        console.log(value)
+        setSearchState({...searchState, search: value})
+    }
+
+	// useEffect(() => {
+    //     console.log('ping')
+	// 	API.google_search('money', 'gif')
+    //     .then(data => {
+    //         console.log(data)
+    //         setSearch(data.data)
+    //     })
+	// },[])
 	
 
-	return(
+	return (
         <>
-        <Header />
-        <Filter />
-        <Search />
+        <SearchContext.Provider value={searchState}>
+            <Header />
+            <Filter />
+            <Search />
+        </SearchContext.Provider>
         </>
-	)
+  )
 }
 
 export default IndexPage

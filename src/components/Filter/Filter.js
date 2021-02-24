@@ -14,7 +14,7 @@ const Filter = () => {
             <button>Images</button>
           </li>
         </ul>
-        <img src="./patrick.png" atl="patrick" className = 'filter_img'></img>
+        <img src="./patrick.png" alt="patrick" className = 'filter_img'></img>
       </div>
     )
 }

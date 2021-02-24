@@ -1,27 +1,35 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import {FaSearch} from 'react-icons/fa'
 import './Searchbar.css'
+// context
+import SearchContext from '../../utils/context/SearchContext'
 const SearchBar = () => {
 
-    const [search, setSearch] = useState('')
+    // use context
+    const {
+        search,
+        updateSearch
+    } = useContext(SearchContext)    
+    const [userSearch, setUserSearch] = useState('')
 
 
     const handleInputChange = (event) => {
-        setSearch(event.target.value)
-        console.log(search)
+        setUserSearch(event.target.value)
     }
 
     const handleOnClick = () => {
-        console.log(search)
+        updateSearch(userSearch)
+        setUserSearch('')
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(search)
+        updateSearch(userSearch)
+        setUserSearch('')
     }
     return(
         <form className = 'searchbar' onSubmit = {handleSubmit}>
-            <input placeholder = 'Search' type = 'text' name = 'search' onChange = {handleInputChange} value = {search}/>
+            <input placeholder = 'Search' type = 'text' name = 'userSearch' onChange = {handleInputChange} value = {userSearch}/>
             <button className = 'search_btn' type ='submit'>
                 <FaSearch />
             </button>
