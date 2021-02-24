@@ -7,6 +7,11 @@
     clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
 }
 
+.search_contents{
+    padding-top: 30px;
+    text-align: center;
+}
+
 .search_container:before{
     content: '';
     background-image: url('../../../static/flowers.jpg');
