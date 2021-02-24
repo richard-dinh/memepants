@@ -2,7 +2,9 @@ import {createContext} from 'react'
 
 const SearchContext = createContext({
     search: '',
-    updateSearch: () => {}
+    results: [],
+    updateSearch: () => {},
+    updateResults: () => {}
 })
 
 export default SearchContext

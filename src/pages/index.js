@@ -14,13 +14,18 @@ import SearchContext from '../utils/context/SearchContext'
 const IndexPage = () => {
 
     const [searchState, setSearchState] = useState({
-        search: ''
+        search: '',
+        results: []
     })
 
     searchState.updateSearch = value => {
         console.log("in update Search")
         console.log(value)
         setSearchState({...searchState, search: value})
+    }
+
+    searchState.updateResults = value => {
+        setSearchState({...searchState, results: value})
     }
 
 	// useEffect(() => {
