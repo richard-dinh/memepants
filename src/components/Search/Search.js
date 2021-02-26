@@ -14,6 +14,11 @@ const Search = () => {
             </div>
             <div className = 'results'>
                 <Meme />
+                <Meme />
+                <Meme />
+                <Meme />
+                <Meme />
+                <Meme />
             </div>
         </div>
     )
