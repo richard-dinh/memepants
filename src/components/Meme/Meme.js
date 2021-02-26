@@ -27,11 +27,11 @@ const Meme = () => {
 
     return (
       <>
-        <div className="meme_card meme_item">
+        <div className="meme_card">
                 <img src="./meme_pic.png" alt="example"></img>
-                {/* <div className = 'meme_text'>
+                <p className = 'meme_text'>
                         https://api.time.com/wp-content/uploads/2019/09/savage-patrick-best-spongebob-memes.png
-                </div> */}
+                </p>
             </div>
         {/* <img src="./meme_pic.png" alt="example" className = 'img'></img> */}
         {/* <p>One</p> */}
