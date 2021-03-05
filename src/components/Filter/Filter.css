@@ -19,19 +19,26 @@
 
 .filter_list li button {
     font-family: 'Krabby Patty Regular', serif;
-    margin-left: -2em;
+    margin-left: .5em;
     padding: .25em .75em;
     text-decoration: none;
     cursor: pointer;
     letter-spacing: 1px;
     border: none;
-    border-radius: 50%;
+    background-color: white;
+    outline: none;
+    /* border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    background: linear-gradient(to right, #F9ABA7, #A58DBD, #D6DF24);
+    -o-border-radius: 50%; */
+    /* background: linear-gradient(to right, #F9ABA7, #A58DBD, #D6DF24); */
 }
+
+.filter_list li button:focus{
+    border: 3px solid #F9ABA7;
+}
+
 
 .filter_img{
     position: relative;

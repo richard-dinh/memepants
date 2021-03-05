@@ -15,19 +15,23 @@ const IndexPage = () => {
 
     const [searchState, setSearchState] = useState({
         search: '',
+        filter: '',
         results: []
     })
 
-    searchState.updateSearch = value => {
+    searchState.updateSearch = search => {
         console.log("in update Search")
-        console.log(value)
-        setSearchState({...searchState, search: value})
+        console.log(search)
+        setSearchState({...searchState, search})
     }
 
-    searchState.updateResults = value => {
-        setSearchState({...searchState, results: value})
+    searchState.updateResults = results => {
+        setSearchState({...searchState, results})
     }
 
+    searchState.updateFilter = filter => {
+        setSearchState({...searchState, filter})
+    }
 	// useEffect(() => {
     //     console.log('ping')
 	// 	API.google_search('money', 'gif')

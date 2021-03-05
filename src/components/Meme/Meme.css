@@ -8,6 +8,7 @@
     max-width: 120px;
     flex-basis: 1 0 35%;
     margin: .5em;
+    padding: 8px;
     transition: 0.5s;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
@@ -16,6 +17,10 @@
     overflow: hidden;
 }
 
+/* target first two children */
+.meme_card:nth-child(-n+2){
+    margin-top: 1.75em;
+}
 .meme_card img {
     height:120px;
     width: 100%;
