@@ -33,14 +33,21 @@ const IndexPage = () => {
         console.log(filter)
         setSearchState({...searchState, filter})
     }
-	// useEffect(() => {
-    //     console.log('ping')
-	// 	API.google_search('money', 'gif')
-    //     .then(data => {
-    //         console.log(data)
-    //         setSearch(data.data)
-    //     })
-	// },[])
+	useEffect(() => {
+        // only fire if search exists
+        if(searchState.search){
+            console.log('user has inputted search, run api call')
+            // clear search
+            setSearchState({...searchState, search: ''})
+
+        }
+        // console.log('ping')
+		// API.google_search('money', 'gif')
+        // .then(data => {
+        //     console.log(data)
+        //     setSearch(data.data)
+        // })
+	},[searchState.search])
 	
 
 	return (

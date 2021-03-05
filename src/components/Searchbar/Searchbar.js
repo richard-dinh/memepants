@@ -19,13 +19,11 @@ const SearchBar = () => {
 
     const handleOnClick = () => {
         updateSearch(userSearch)
-        setUserSearch('')
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
         updateSearch(userSearch)
-        setUserSearch('')
     }
     return(
         <form className = 'searchbar' onSubmit = {handleSubmit}>

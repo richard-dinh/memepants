@@ -20,7 +20,7 @@ const Filter = () => {
             // Check to see if already toggled, if so untoggle
             if(buttonState.gifs){
                 setButtonState({ ...buttonState, gifs: false, img: false })
-                updateFilter(null)
+                updateFilter('')
             }
             else{
                 setButtonState({...buttonState, gifs: true, img: false})
@@ -30,7 +30,7 @@ const Filter = () => {
         else{
             if(buttonState.img){
                 setButtonState({ ...buttonState, gifs: false, img: false })
-                updateFilter(null)
+                updateFilter('')
             }
             else{
                 setButtonState({...buttonState, gifs: false, img: true})
