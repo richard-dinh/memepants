@@ -20,8 +20,8 @@ const IndexPage = () => {
     })
 
     searchState.updateSearch = search => {
-        console.log("in update Search")
         console.log(search)
+        console.log(`filter: ${searchState.filter}`)
         setSearchState({...searchState, search})
     }
 

@@ -7,3 +7,8 @@
 html{
     font-family: 'Krabby Patty Regular', serif;
 }
+
+:focus {
+    outline: none;
+    border: 3px solid #F9ABA7;
+}
