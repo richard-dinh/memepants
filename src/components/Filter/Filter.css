@@ -35,8 +35,8 @@
     /* background: linear-gradient(to right, #F9ABA7, #A58DBD, #D6DF24); */
 }
 
-.filter_list li button:focus{
-    border: 3px solid #F9ABA7;
+.active{
+    border: 3px solid #F9ABA7 !important;
 }
 
 

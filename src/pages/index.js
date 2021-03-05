@@ -30,6 +30,7 @@ const IndexPage = () => {
     }
 
     searchState.updateFilter = filter => {
+        console.log(filter)
         setSearchState({...searchState, filter})
     }
 	// useEffect(() => {
