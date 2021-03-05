@@ -3,14 +3,15 @@ import './Meme.css'
 
 
 
-const Meme = () => {
+const Meme = (props) => {
 
+    console.log(props)
     return (
       <>
         <div className="meme_card">
-                <img src="./meme_pic.png" alt="example"></img>
+                <img src= {props.link} alt="example"></img>
                 <p className = 'meme_text'>
-                        https://api.time.com/wp-content/uploads/2019/09/savage-patrick-best-spongebob-memes.png
+                        {props.link}
                 </p>
             </div>
         {/* <img src="./meme_pic.png" alt="example" className = 'img'></img> */}

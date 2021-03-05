@@ -24,7 +24,7 @@ const Filter = () => {
             }
             else{
                 setButtonState({...buttonState, gifs: true, img: false})
-                updateFilter('gifs')
+                updateFilter('gif')
             }
         }
         else{
@@ -34,7 +34,7 @@ const Filter = () => {
             }
             else{
                 setButtonState({...buttonState, gifs: false, img: true})
-                updateFilter('img')
+                updateFilter('image')
             }
         }
     }

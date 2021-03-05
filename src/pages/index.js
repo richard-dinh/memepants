@@ -38,15 +38,20 @@ const IndexPage = () => {
         if(searchState.search){
             console.log('user has inputted search, run api call')
             // clear search
-            setSearchState({...searchState, search: ''})
+
+            API.google_search(searchState.search, searchState.filter)
+            .then( ({data}) => {
+                setSearchState({...searchState, search: '', results: data.items})
+                console.log(data.items)
+            })
+            .catch(err => {
+                setSearchState({ ...searchState, search: "" })
+                console.log(err)
+            })
+
+            // empty search in Search state in event user wants to conduct the same search 
 
         }
-        // console.log('ping')
-		// API.google_search('money', 'gif')
-        // .then(data => {
-        //     console.log(data)
-        //     setSearch(data.data)
-        // })
 	},[searchState.search])
 	
 
