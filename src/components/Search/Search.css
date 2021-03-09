@@ -3,9 +3,10 @@
     width: 100%;
     height: inherit;
     min-height: 100vh;
-    top: -20px;
-        -webkit-clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
-    clip-path: polygon(0 3%, 100% 0, 100% 100%, 0 100%);
+    padding-bottom: 2rem;
+    margin-top: -20px;
+    -webkit-clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 2.3%, 100% 0, 100% 100%, 0 100%);
 }
 
 .search_contents{
@@ -35,6 +36,7 @@
     width: 340px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 1.5rem;
     justify-content: center;
 }
 
@@ -50,3 +52,16 @@
         max-width: 900px;
     }
 }
+
+/* loading pic */
+.loading{
+    margin-left: auto;
+    margin-right: auto;
+    width: 7rem;
+    display: block;
+    animation: spin 4s linear infinite;
+    -webkit-animation: spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

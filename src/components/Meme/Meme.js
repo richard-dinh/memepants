@@ -5,7 +5,6 @@ import './Meme.css'
 
 const Meme = (props) => {
 
-    console.log(props)
     return (
       <>
         <div className="meme_card">
