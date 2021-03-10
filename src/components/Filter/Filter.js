@@ -34,7 +34,7 @@ const Filter = () => {
             }
             else{
                 setButtonState({...buttonState, gifs: false, img: true})
-                updateFilter('image')
+                updateFilter('png&jpg&jpeg&bmp&tiff')
             }
         }
     }

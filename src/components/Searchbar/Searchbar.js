@@ -22,6 +22,7 @@ const SearchBar = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        console.log(userSearch)
         updateSearch(userSearch)
     }
     return(
