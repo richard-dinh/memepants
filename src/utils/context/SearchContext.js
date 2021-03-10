@@ -4,9 +4,11 @@ const SearchContext = createContext({
     search: '',
     results: [],
     filter: '',
+    start: 0,
     updateSearch: () => {},
     updateResults: () => {},
-    updateFilter: () => {}
+    updateFilter: () => {},
+    updateStartAndResults: () => {}
 })
 
 export default SearchContext

@@ -16,12 +16,12 @@ const IndexPage = () => {
     const [searchState, setSearchState] = useState({
         search: '',
         filter: '',
+        // The index of the first result to return.
+        start: 0,
         results: []
     })
 
     searchState.updateSearch = search => {
-        console.log(search)
-        console.log(`filter: ${searchState.filter}`)
         setSearchState({...searchState, search})
     }
 
@@ -30,19 +30,22 @@ const IndexPage = () => {
     }
 
     searchState.updateFilter = filter => {
-        console.log(filter)
         setSearchState({...searchState, filter})
     }
+
+    searchState.updateStartAndResults = (start, results) => {
+        setSearchState({...searchState, start, results})
+    }
+
 	useEffect(() => {
         // only fire if search exists
         if(searchState.search){
             console.log('user has inputted search, run api call')
             // clear search
 
-            API.google_search(searchState.search, searchState.filter)
+            API.google_search(searchState.search, searchState.filter, searchState.start)
             .then( ({data}) => {
                 setSearchState({...searchState, search: '', results: data.items})
-                console.log(data.items)
             })
             .catch(err => {
                 setSearchState({ ...searchState, search: "" })

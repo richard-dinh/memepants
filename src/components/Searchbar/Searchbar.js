@@ -1,6 +1,7 @@
 import React, {useState, useContext} from 'react'
 import {FaSearch} from 'react-icons/fa'
 import './Searchbar.css'
+
 // context
 import SearchContext from '../../utils/context/SearchContext'
 const SearchBar = () => {
@@ -8,7 +9,8 @@ const SearchBar = () => {
     // use context
     const {
         search,
-        updateSearch
+        updateSearch,
+        start
     } = useContext(SearchContext)    
     const [userSearch, setUserSearch] = useState('')
 
@@ -17,9 +19,6 @@ const SearchBar = () => {
         setUserSearch(event.target.value)
     }
 
-    const handleOnClick = () => {
-        updateSearch(userSearch)
-    }
 
     const handleSubmit = (event) => {
         event.preventDefault()
