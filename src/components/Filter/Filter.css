@@ -34,7 +34,17 @@
     -o-border-radius: 50%; */
     /* background: linear-gradient(to right, #F9ABA7, #A58DBD, #D6DF24); */
 }
-
+@media(min-width: 600px){
+    .filter_list{
+        padding-top:2.5em;
+    }
+    .filter_title{
+        font-size: 1.25rem;
+    }
+    .filter_list li button{
+        font-size: 1.25rem;
+    }
+}
 .active{
     border: 3px solid #F9ABA7 !important;
 }

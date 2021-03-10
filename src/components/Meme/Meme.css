@@ -27,14 +27,6 @@
     width: 100%;
 }
 
-@media(min-width: 600px){
-    .meme_card{
-        height: 235px;
-    }
-    .meme_card img{
-        height: 200px;
-    }
-}
 
 
 .meme_text {
@@ -47,7 +39,11 @@
 }
 @media(min-width: 600px){
     .meme_card{
+        height: 235px;
         flex-basis: 30%;
+    }
+    .meme_card img{
+        height: 200px;
     }
     .meme_card:nth-child(-n+3){
     margin-top: 1.75em;
@@ -56,13 +52,29 @@
 
 @media (min-width: 900px){
     .meme_card{
+        height: 295px;
         flex-basis: 22%;
+    }
+    .meme_card img{
+        height: 260px;
     }
     .meme_card:nth-child(-n+4){
     margin-top: 1.75em;
     }
 }
 
+@media(min-width: 1400px){
+    .meme_card{
+        height: 355px;
+        flex-basis: 18%;
+    }
+    .meme_card img{
+        height: 320px;
+    }
+    .meme_card:nth-child(-n+5){
+    margin-top: 1.75em;
+    }
+}
 .meme_card:hover{
   transform: scale(1.05);
   -webkit-transform: scale(1.05);
