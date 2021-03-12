@@ -1,52 +1,72 @@
 import React, {useEffect, useState} from "react"
-import { Link } from "gatsby"
 
 import API from '../utils/API/api'
 // Components
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Header from '../components/Header/Header'
+import Filter from '../components/Filter/Filter'
+import Search from '../components/Search/Search'
+// css
+import './index.css'
 
+// Context
+import SearchContext from '../utils/context/SearchContext'
 
 const IndexPage = () => {
 
-    const [search, setSearch] = useState(null)
+    const [searchState, setSearchState] = useState({
+        search: '',
+        filter: '',
+        // The index of the first result to return.
+        start: 0,
+        results: []
+    })
+
+    searchState.updateSearch = search => {
+        setSearchState({...searchState, search})
+    }
+
+    searchState.updateResults = results => {
+        setSearchState({...searchState, results})
+    }
+
+    searchState.updateFilter = filter => {
+        setSearchState({...searchState, filter})
+    }
+
+    searchState.updateStartAndResults = (start, results) => {
+        setSearchState({...searchState, start, results})
+    }
 
 	useEffect(() => {
-        console.log('ping')
-		API.google_search('money', 'gif')
-        .then(data => {
-            console.log(data)
-            setSearch(data.data)
-        })
-	},[])
+        // only fire if search exists
+        if(searchState.search){
+            console.log('user has inputted search, run api call')
+            // clear search
+
+            API.google_search(searchState.search, searchState.filter, searchState.start)
+            .then( ({data}) => {
+                setSearchState({...searchState, search: '', results: data.items})
+            })
+            .catch(err => {
+                setSearchState({ ...searchState, search: "" })
+                console.log(err)
+            })
+
+            // empty search in Search state in event user wants to conduct the same search 
+
+        }
+	},[searchState.search])
 	
 
-	return(
-		<Layout>
-			<SEO title="Home" />
-			<h1>Hi people</h1>
-			<p>Welcome to your new Gatsby site.</p>
-			<p>Now go build something great.</p>
-			<div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-				<Image />
-			</div>
-			<Link to="/page-2/">Go to page 2</Link> <br />
-			<Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-            {search ?
-                <ul>
-                {search.items.map(result => {
-                    return(
-                        <li>
-                            <img src = {result.link} alt = {result.title}></img>
-                            <p>{result.title}</p>
-                        </li>
-                    )
-                })}
-                </ul> 
-            : null}
-		</Layout>
-	)
+	return (
+        <>
+        <SearchContext.Provider value={searchState}>
+            <Header />
+            <Filter />
+            <Search />
+        </SearchContext.Provider>
+        </>
+  )
 }
 
 export default IndexPage

@@ -1,0 +1,71 @@
+.search_container{
+    position: relative;
+    width: 100%;
+    height: inherit;
+    min-height: 100vh;
+    padding-bottom: 2rem;
+    margin-top: -20px;
+    -webkit-clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 2.3%, 100% 0, 100% 100%, 0 100%);
+}
+
+.search_contents{
+    padding-top: 30px;
+    text-align: center;
+}
+
+.search_container:before{
+    content: '';
+    background-image: url('../../../static/flowers.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: .59;
+    z-index: -5;
+    padding: 0;
+    margin:0;
+}
+
+.results{
+    display: flex;
+    flex-wrap: wrap;
+    /* update width in media query */
+    width: 340px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+}
+
+@media(min-width: 600px){
+    .results{
+        width: 85%;
+        width: 550px;
+    }
+}
+
+@media(min-width:900px){
+    .results{
+        width: 85%;
+    }
+}
+@media(min-width: 1400px){
+    .results{
+        width: 90%;
+    }
+}
+/* loading pic */
+.loading{
+    margin-left: auto;
+    margin-right: auto;
+    width: 7rem;
+    display: block;
+    animation: spin 4s linear infinite;
+    -webkit-animation: spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
