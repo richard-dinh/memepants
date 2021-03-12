@@ -32,6 +32,7 @@
     margin: 0;
 }
 .spongebob_title{
+    padding-top: .5em;
     color: #E7DF31;
 }
 .memepants_title{
@@ -43,6 +44,30 @@
 }
 .app_description{
     font-size: 1.25rem;
-    color: #827B7B;
+    color: #585454;
+    padding-left: .5em;
+    padding-right:.5em;
 }
 
+@media(min-width: 600px){
+    .header_container{
+        height: 370px;
+    }
+    .header_title{
+    font-size: 3rem;
+    }
+    .app_description{
+        font-size: 1.4rem;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
+@media(min-width: 1400px){
+    .spongebob_title{
+        padding-top: .2em;
+    }
+    .app_description{
+        font-size: 1.7rem;
+    }
+}
