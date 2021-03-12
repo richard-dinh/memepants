@@ -46,7 +46,7 @@
     top: -4.2rem;
     /* left: -42vw; */
     left: calc(66vw - 100vw);
-    opacity: 50%;
+    opacity: .5;
     z-index: -10;
 }
 
