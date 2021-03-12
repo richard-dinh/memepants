@@ -8,9 +8,7 @@ const SearchBar = () => {
 
     // use context
     const {
-        search,
         updateSearch,
-        start
     } = useContext(SearchContext)    
     const [userSearch, setUserSearch] = useState('')
 
