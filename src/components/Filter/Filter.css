@@ -24,7 +24,7 @@
     text-decoration: none;
     cursor: pointer;
     letter-spacing: 1px;
-    border: none;
+    border: 1px solid white;
     background-color: white;
     outline: none;
     /* border-radius: 50%;
@@ -35,7 +35,7 @@
     /* background: linear-gradient(to right, #F9ABA7, #A58DBD, #D6DF24); */
 }
 .active{
-    border: 3px solid #F9ABA7 !important;
+    border: 1px solid #F9ABA7 !important;
 }
 
 
