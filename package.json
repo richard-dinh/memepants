@@ -37,7 +37,7 @@
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start:dev": "concurrently \"npm run develop\" \"nodemon --ignore './public/' --ignore './.cache/' \"",
-    "start": "node server.js",
+    "start": "gatsby build && node server.js",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "heroku-postbuild": "gatsby build",
