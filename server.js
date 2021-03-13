@@ -10,4 +10,6 @@ app.use(express.json())
 app.use(require('./routes'))
 
 
-app.listen(process.env.PORT || 8001)
+app.listen(process.env.PORT || 8001, () => {
+    console.log('server started')
+})
