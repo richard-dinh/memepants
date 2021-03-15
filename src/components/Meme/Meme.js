@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import './Meme.css'
 
-
+// context
+import SearchContext from '../../utils/context/SearchContext'
 
 const Meme = (props) => {
 
+    const {updateCopy} = useContext(SearchContext)
     const handleOnClick = (link) => {
         const tempDiv = document.createElement('textarea')
         tempDiv.value = link
@@ -12,6 +14,7 @@ const Meme = (props) => {
         tempDiv.select()
         document.execCommand('copy')
         document.body.removeChild(tempDiv)
+        updateCopy(true)
     }
     return (
       <>

@@ -1,0 +1,32 @@
+.copy_message{
+    position: fixed;
+    bottom: 2%;
+    left: 50%;
+    width: 175px;
+    text-align: center;
+    margin-left: -75px;
+    padding: .3em;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 10;
+    opacity: 0;
+    animation: fade 2s linear;
+    -webkit-animation: fade 3s linear;
+}
+
+@keyframes fade{
+    0%,100% { opacity: 0 }
+    25%,75% { opacity: 1 }
+}
+
+@media(min-width: 600px){
+    .copy_message{
+        width: 250px;
+        font-size: 1.3rem;
+    }
+}
+@media(min-width: 1400px){
+    .copy_message{
+        width: 400px;
+        font-size: 2rem;
+    }
+}
