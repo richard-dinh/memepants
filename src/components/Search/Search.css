@@ -5,8 +5,8 @@
     min-height: 100vh;
     padding-bottom: 2rem;
     margin-top: -20px;
-    -webkit-clip-path: polygon(0 6%, 100% 0, 100% 100%, 0 100%);
-    clip-path: polygon(0 2.3%, 100% 0, 100% 100%, 0 100%);
+    /* -webkit-clip-path: polygon(0 2.3%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 2.3%, 100% 0, 100% 100%, 0 100%); */
 }
 
 .search_contents{

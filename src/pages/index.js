@@ -5,6 +5,7 @@ import API from '../utils/API/api'
 import Header from '../components/Header/Header'
 import Filter from '../components/Filter/Filter'
 import Search from '../components/Search/Search'
+import CopyMessage from '../components/CopyMessage/CopyMessage'
 // css
 import './index.css'
 
@@ -18,6 +19,7 @@ const IndexPage = () => {
         filter: '',
         // The index of the first result to return.
         start: 0,
+        copy: false,
         results: []
     })
 
@@ -37,6 +39,12 @@ const IndexPage = () => {
         setSearchState({...searchState, start, results})
     }
 
+    searchState.updateCopy = (copy) => {
+        setSearchState({...searchState, copy})
+        setTimeout(() => {
+            setSearchState({...searchState, copy: false})
+        }, 3000);
+    }
 	useEffect(() => {
         // only fire if search exists
         if(searchState.search){
@@ -64,6 +72,7 @@ const IndexPage = () => {
             <Header />
             <Filter />
             <Search />
+            <CopyMessage value = {searchState.copy}/>
         </SearchContext.Provider>
         </>
   )
