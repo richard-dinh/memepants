@@ -38,7 +38,7 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"npm run develop\" \"nodemon --ignore './public/' --ignore './.cache/' \"",
-    "start": "node server.js",
+    "start": "node src/server/server.js",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
