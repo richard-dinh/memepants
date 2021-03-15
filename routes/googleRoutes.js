@@ -30,6 +30,7 @@ router.get("/google/:q?/:fileType?/:start?", (request, response) => {
         response.json(data)
     })
     .catch(err => {
+        console.log(err)
         response.status(400).send(err)
     })
 })
